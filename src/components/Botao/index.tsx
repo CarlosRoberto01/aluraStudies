@@ -1,11 +1,12 @@
 import React from 'react'
+import './style.scss'
 
 export default function Botao() {
-    return (
-        <button>
-            Botão
-        </button>
-    )
+        return (
+            <button className='botao'>
+                Botão
+            </button>
+        )
 }
 
 

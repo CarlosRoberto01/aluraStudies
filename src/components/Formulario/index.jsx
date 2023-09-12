@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+
+import React from 'react'
 import Botao from '../Botao'
 
-export default class Formulario extends Component {
-    render() {
-        return (
+export default function Formulario() {
+  return (
             <form>
                 <div>
                     <label htmlFor='tarefa'>
@@ -28,11 +28,10 @@ export default class Formulario extends Component {
                         min='00:00:00'
                         max='01:30:00'
                         required
-
                     />
                 </div>
-                <Botao />
+                <Botao/>
             </form>
-        )
-    }
+    
+  )
 }

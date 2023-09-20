@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Botao from '../Botao';
 import style from './Formulario.module.scss';
 import { TarefaProps } from '../../types/tarefas';
-
+import { v4 as uuidv4 } from 'uuid';
 
 interface FormularioProps {
   setTarefas: React.Dispatch<React.SetStateAction<TarefaProps[]>>;
@@ -18,9 +18,18 @@ export default function Formulario({ setTarefas }: FormularioProps) {
     event.preventDefault();
     setTarefas((prevTarefas) => [
       ...prevTarefas,
-      { tarefa: tarefaPadrao.tarefa, tempo: tarefaPadrao.tempo },
+      {
+        tarefa: tarefaPadrao.tarefa,
+        tempo: tarefaPadrao.tempo,
+        selecionado:false,
+        completado:false,
+        id: uuidv4()
+      }
     ]);
-    console.log('peguei');
+    setTarefaPadrao({
+      tarefa: '',
+      tempo: '00:00'
+    })
   }
 
   return (

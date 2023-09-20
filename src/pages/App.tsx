@@ -8,11 +8,20 @@ import { TarefaProps } from '../types/tarefas';
 
 function App() {
   
-  const [tarefas, setTarefas] = useState<TarefaProps[] | []>([])
+  const [tarefas, setTarefas] = useState<TarefaProps[] | []>([]);
+  const [selecionado, setSelecionado] = useState<TarefaProps>();
+
+  function selecionaTarefa(tarefaSelecionada: TarefaProps){
+    setSelecionado(tarefaSelecionada);
+  }
+
   return (
     <div className={style.AppStyle}>
       <Formulario setTarefas={setTarefas}/>
-      <Lista tarefas={tarefas}/>
+      <Lista 
+        tarefas={tarefas}
+        selecionaTarefa={selecionaTarefa}
+      />
       <Cronometro />
     </div>
   );

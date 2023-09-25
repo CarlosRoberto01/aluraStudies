@@ -21,8 +21,8 @@ export default function Formulario({ setTarefas }: FormularioProps) {
       {
         tarefa: tarefaPadrao.tarefa,
         tempo: tarefaPadrao.tempo,
-        selecionado:false,
-        completado:false,
+        selecionado: false,
+        completado: false,
         id: uuidv4()
       }
     ]);

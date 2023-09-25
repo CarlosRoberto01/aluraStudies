@@ -3,14 +3,14 @@ import style from './Botao.module.scss';
 
 interface BotaoProps {
     texto: string,
-    type?: "button" | "submit" | "reset" | undefined 
+    type?: "button" | "submit" | "reset" | undefined
 }
 
-export default function Botao({ texto, type }: BotaoProps) { 
+export default function Botao({ texto, type }: BotaoProps) {
     return (
-        <button 
+        <button
             className={style.botao}
-            type={type || "button"} 
+            type={type || "button"}
         >
             {texto}
         </button>

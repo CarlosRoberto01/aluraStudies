@@ -9,9 +9,10 @@ import tempoParaSegundos from '../common/utils/time'
 
 interface CronometroProps {
   selecionado: TarefaProps | undefined;
+  finalizarTarefa: () => void
 }
 
-export default function Cronometro({ selecionado }: CronometroProps) {
+export default function Cronometro({ selecionado, finalizarTarefa }: CronometroProps) {
 
   const [tempo, setTempo] = useState<number>();
   useEffect(() => {
@@ -22,10 +23,11 @@ export default function Cronometro({ selecionado }: CronometroProps) {
 
   function regressiva(contador: number = 0) {
     setTimeout(() => {
-      if(contador > 0){
+      if (contador > 0) {
         setTempo(contador - 1);
-        return regressiva (contador - 1);
+        return regressiva(contador - 1);
       }
+      finalizarTarefa();
     }, 1000)
   }
 
